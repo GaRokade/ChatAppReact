@@ -7,7 +7,11 @@ const PORT = process.env.PORT || 3000;
 
 // Create an HTTP server instance
 var server = http.createServer(app);
+app.use(express.static(path.join(__dirname)));
 
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "index.html"));
+});
 // Serve static files (optional, if needed for a frontend)
 app.use(express.static("public"));
 app.get("/favicon.ico", (req, res) => {
