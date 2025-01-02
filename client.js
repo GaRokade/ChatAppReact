@@ -1,9 +1,8 @@
-const socket = io("https://your-project-name.vercel.app");
-
+const socket = io("http://localhost:3000");
 const form = document.getElementById("send-container");
 const messageInput = document.getElementById("messageInp");
 const messageContainer = document.querySelector(".container");
-var audio = new Audio("/iphone_message_tone.mp3");
+var audio = new Audio("iphone_message_tone.mp3");
 
 const append = (message, position) => {
   const messageElement = document.createElement("div");
